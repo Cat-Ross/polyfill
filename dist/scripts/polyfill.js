@@ -36,6 +36,11 @@ module.exports = function(){
         };
     }
 
+    if (!Array.prototype.isArray) {
+        Array.prototype.isArray = function(arg) {
+            return Object.prototype.toString.call(arg) === '[object Array]';
+        };
+    }
 
     if (!Array.prototype.indexOf){
         Array.prototype.indexOf = function(elt) {
